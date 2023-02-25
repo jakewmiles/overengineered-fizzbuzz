@@ -1,4 +1,4 @@
-import { Wizz } from "./Wizz";
+import { Wizz } from "../src/rules/implementations/Wizz";
 
 describe("Wizz", () => {
   let wizz: Wizz;
