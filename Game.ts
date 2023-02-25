@@ -8,14 +8,10 @@ export class Game {
   private rules: Rule[];
 
   public play(input: number): string {
-    let result = "";
-
-    this.rules.forEach((rule) => {
-      if (rule.applies(input)) {
-        result += rule.getRuleName();
-      }
-    });
-
-    return result || input.toString();
+    return (
+      this.rules
+        .map((rule) => (rule.applies(input) ? rule.getRuleName() : ""))
+        .join("") || input.toString()
+    );
   }
 }
